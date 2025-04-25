@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi Payment Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Select Payment Method</h2>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="card">Card</button>
+      <button class="tab-button" data-tab="netbanking">Net Banking</button>
+      <button class="tab-button" data-tab="upi">UPI</button>
+      <button class="tab-button" data-tab="wallet">Wallet</button>
+      <button class="tab-button" data-tab="emi">EMI</button>
+    </div>
+
+    <div class="tab-content active" id="card">
+      <form>
+        <label>Cardholder Name</label>
+        <input type="text" placeholder="John Doe" required />
+
+        <label>Card Number</label>
+        <input type="tel" maxlength="16" placeholder="1234 5678 9012 3456" required />
+
+        <div class="row">
+          <input type="text" placeholder="MM/YY" required />
+          <input type="text" maxlength="4" placeholder="CVV" required />
+        </div>
+
+        <button type="submit" class="btn">Pay Now</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="netbanking">
+      <form>
+        <label>Select Bank</label>
+        <select>
+          <option>SBI</option>
+          <option>ICICI</option>
+          <option>HDFC</option>
+          <option>Axis</option>
+        </select>
+        <button type="submit" class="btn">Pay via Net Banking</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="upi">
+      <form>
+        <label>Enter UPI ID</label>
+        <input type="text" placeholder="example@upi" required />
+        <button type="submit" class="btn">Pay via UPI</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="wallet">
+      <form>
+        <label>Select Wallet</label>
+        <select>
+          <option>Paytm</option>
+          <option>PhonePe</option>
+          <option>Google Pay</option>
+        </select>
+        <button type="submit" class="btn">Pay via Wallet</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="emi">
+      <form>
+        <label>Select EMI Plan</label>
+        <select>
+          <option>3 Months @ ₹1,000/mo</option>
+          <option>6 Months @ ₹550/mo</option>
+          <option>12 Months @ ₹300/mo</option>
+        </select>
+        <button type="submit" class="btn">Pay via EMI</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

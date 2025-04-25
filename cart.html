@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="addtocart.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Your Shopping Cart</h2>
+        <div id="cartItemsContainer"></div>
+        <div class="total-amount" id="totalAmount"></div>
+        <a href="payment.html" class="buy-btn" id="buyBtn">Buy Now</a>
+    </div>
+
+    <script>
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const cartContainer = document.getElementById('cartItemsContainer');
+        const totalAmountDiv = document.getElementById('totalAmount');
+        const buyBtn = document.getElementById('buyBtn');
+
+        function updateCart() {
+            cartContainer.innerHTML = '';
+            const mergedItems = cartItems.reduce((acc, item) => {
+                const existing = acc.find(i => i.name === item.name);
+                existing ? (existing.quantity++, existing.totalPrice += item.price) : acc.push({ ...item, quantity: 1, totalPrice: item.price });
+                return acc;
+            }, []);
+            const totalAmount = mergedItems.reduce((sum, item) => sum + item.totalPrice, 0);
+
+            if (mergedItems.length === 0) {
+                cartContainer.innerHTML = '<p class="empty-message">Your cart is empty.</p>';
+                totalAmountDiv.textContent = '';
+                buyBtn.style.display = 'none';
+            } else {
+                mergedItems.forEach((item, index) => {
+                    cartContainer.innerHTML += `
+                        <div class="cart-item">
+                            <strong>${item.name} (x${item.quantity})</strong>
+                            <span>Rs ${item.totalPrice}</span>
+                            <button onclick="removeItem(${index})">Remove</button>
+                        </div>`;
+                });
+                totalAmountDiv.textContent = `Total Amount: Rs ${totalAmount}`;
+                buyBtn.style.display = 'inline-block';
+            }
+        }
+
+        function removeItem(index) {
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            updateCart();
+        }
+
+        updateCart();
+    </script>
+
+</body>
+</html>

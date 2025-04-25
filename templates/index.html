@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ecommerce Navbar Design</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
+
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="nevbar.css">
+</head>
+
+<body>
+
+    <div class="main-navbar shadow-sm sticky-top">
+        <div class="top-navbar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+                        <h5 class="brand-name">BIKE ZONE</h5>
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <form role="search">
+                            <div class="input-group">
+                                <input type="search" placeholder="Search your product" class="form-control" id="input-box"  onchange="abc(this.value)" />
+                                <button class="btn bg-white" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link" href="cart.html">
+                                    <i class="fa fa-shopping-cart"></i> Cart (0)
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user"></i> Username 
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="profile.html"><i class="fa fa-user"></i> Profile</a></li>
+                                    <li><a class="dropdown-item" href="myorder.html"><i class="fa fa-list"></i> My Orders</a></li>
+                                    
+                                    <li><a class="dropdown-item" href="cart.html"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
+                    Funda Ecom
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="templates/contact.html">Contact</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="feature.html">Featured Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="accessories.html">Accessories</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="indexslide.css" />
+<!-- search model -->
+ 
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search Results</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="searchResults" class="row"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div>
+        <div class="carousel">
+            <ul class="slides">
+                <input type="radio" name="radio-buttons" id="img-1" checked />
+                <li class="slide-container">
+                    <div class="slide-image">
+                        <img src="image/Screenshot (6).png">
+                    </div>
+                    <div class="carousel-controls">
+                        <label for="img-3" class="prev-slide">
+                            <span>‹</span>
+                        </label>
+                        <label for="img-2" class="next-slide">
+                            <span>›</span>
+                        </label>
+                    </div>
+                </li>
+                <input type="radio" name="radio-buttons" id="img-2" />
+                <li class="slide-container">
+                    <div class="slide-image">
+                        <img src="image/indeximage.jpg">
+                    </div>
+                    <div class="carousel-controls">
+                        <label for="img-1" class="prev-slide">
+                            <span>‹</span>
+                        </label>
+                        <label for="img-3" class="next-slide">
+                            <span>›</span>
+                        </label>
+                    </div>
+                </li>
+                <input type="radio" name="radio-buttons" id="img-3" />
+                <li class="slide-container">
+                    <div class="slide-image">
+                        <img src="image/indeximage2.jpg">
+                    </div>
+                    <div class="carousel-controls">
+                        <label for="img-2" class="prev-slide">
+                            <span>‹</span>
+                        </label>
+                        <label for="img-1" class="next-slide">
+                            <span>›</span>
+                        </label>
+                    </div>
+                </li>
+                <div class="carousel-dots">
+                    <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                    <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                    <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" href="product.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <div class="container">
+        <div class="sub-container">
+            <h1 class="heading">SHOP NOW...!</h1>
+            <ul class="product-container">
+                <li class="product">
+                    <div class="header">
+                        <img class="product-img" src="image/CYCLE1.jpg" alt="Cycle 1" />
+                    </div>
+                    <div class="footer1">
+                        <p class="product-cat">Sale!! <br><br>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star checked"></i><br><br>
+                        </p>
+                        <h3 class="product-name"><a href="image/cycle2.jpg" target="_blank">Mountain Bike</a></h3>
+                        <p class="product-price"><h3>Rs 26000</h3></p>
+                        <button class="srk" type="button">BUY NOW</button>
+                        <button class="srk" type="button" onclick="addToCart('Mountain Bike', 26000)">ADD TO CART</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="header">
+                        <img class="product-img" src="image/cycle3.png" alt="Cycle 2" />
+                    </div>
+                    <div class="footer1">
+                        <p class="product-cat">New <br><br>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star checked"></i><br><br>
+                        </p>
+                        <h3 class="product-name">City Cruiser</h3>
+                        <p class="product-price"><h3>Rs 11000</h3></p>
+                        <button class="srk" type="button">BUY NOW</button>
+                        <button class="srk" type="button" onclick="addToCart('City Cruiser', 11000)">ADD TO CART</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="header">
+                        <img class="product-img" src="image/cycle4.jpg" alt="Cycle 3" />
+                    </div>
+                    <div class="footer1">
+                        <p class="product-cat">New <br><br>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star checked"></i><br><br>
+                        </p>
+                        <h3 class="product-name">Hybrid Bike</h3>
+                        <p class="product-price"><h3>Rs 15000</h3></p>
+                        <button class="srk" type="button">BUY NOW</button>
+                        <button class="srk" type="button" onclick="addToCart('Hybrid Bike', 15000)">ADD TO CART</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="header">
+                        <img class="product-img" src="image/cycle5.jpg" alt="Cycle 4" />
+                    </div>
+                    <div class="footer1">
+                        <p class="product-cat">Sale!! <br><br>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star checked"></i><br><br>
+                        </p>
+                        <h3 class="product-name">Road Bike</h3>
+                        <p class="product-price"><h3>Rs 20000</h3></p>
+                        <button class="srk" type="button">BUY NOW</button>
+                        <button class="srk" type="button" onclick="addToCart('Road Bike', 20000)">ADD TO CART</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="header">
+                        <img class="product-img" src="image/cycle6.jpg" alt="Cycle 5" />
+                    </div>
+                    <div class="footer1">
+                        <p class="product-cat">New <br><br>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star checked"></i><br><br>
+                        </p>
+                        <h3 class="product-name">Electric Bike</h3>
+                        <p class="product-price"><h3>Rs 45000</h3></p>
+                        <button class="srk" type="button">BUY NOW</button>
+                        <button class="srk" type="button" onclick="addToCart('Electric Bike', 45000)">ADD TO CART</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="header">
+                        <img class="product-img" src="image/cycle7.jpg" alt="Cycle 6" />
+                    </div>
+                    <div class="footer1">
+                        <p class="product-cat">Sale!! <br><br>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star checked"></i><br><br>
+                        </p>
+                        <h3 class="product-name">BMX Bike</h3>
+                        <p class="product-price"><h3>Rs 18000</h3></p>
+                        <button class="srk" type="button">BUY NOW</button>
+                        <button class="srk" type="button" onclick="addToCart('BMX Bike', 18000)">ADD TO CART</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="header">
+                        <img class="product-img" src="image/cycle8.jpg" alt="Cycle 7" />
+                    </div>
+                    <div class="footer1">
+                        <p class="product-cat">New <br><br>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star checked"></i><br><br>
+                        </p>
+                        <h3 class="product-name">Kids' Bike</h3>
+                        <p class="product-price"><h3>Rs 7000</h3></p>
+                        <button class="srk" type="button">BUY NOW</button>
+                        <button class="srk" type="button" onclick="addToCart('Kids\' Bike', 7000)">ADD TO CART</button>
+                    </div>
+                </li>                
+            </ul>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="footer.css" />
+    <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+
+    <div class="footer">
+        <div class="heading">
+            <h2>BIKE ZONE<sup>™</sup></h2>
+        </div>
+        <div class="content">
+            
+            <div class="social-media">
+                <h4>Social</h4>
+                <p>
+                    <a href=""><i class="fab fa-linkedin"></i> Linkedin</a>
+                </p>
+                <p>
+                    <a href=""><i class="fab fa-twitter"></i> Twitter</a>
+                </p>
+                <p>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> Facebook</a>
+                </p>
+                <p>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a>
+                </p>
+            </div>
+            <div class="links">
+                <h4>Quick links</h4>
+                <p><a href="#">Home</a></p>
+                <p><a href="#">About</a></p>
+                <p><a href="#">Blogs</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="details">
+                <h4 class="address">Address</h4>
+                <p>
+                    Motilal Nehru National Institute of Technology Allahabad <br />
+                    Prayagraj , UP (211004)
+                </p>
+                <h4 class="mobile">Mobile</h4>
+                <p><a href="#">+1234567890</a></p>
+                <h4 class="mail">Email</h4>
+                <p><a href="https://mail.google.com"> akash.2024ca009@mnnit.ac.in</a></p>
+            </div>
+        </div>
+        <footer>
+            <hr />
+             2025 BIKE ZONE.
+        </footer>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>
